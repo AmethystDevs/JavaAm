@@ -6,6 +6,8 @@
 
 JavaAm is a modern programming language that simplifies Java while maintaining full compatibility with the Java ecosystem. Write cleaner, more readable code with reduced boilerplate while leveraging the power of Java and the JVM.
 
+Docs Page: javaamdocs.on.websim.com
+
 **Perfect for:**
 - 🚀 **Quick Projects** - Get started with minimal setup
 - 🎮 **Minecraft Modding** - Built-in support for Fabric, Forge, NeoForge, and Plugins
