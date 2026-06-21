@@ -1,0 +1,16 @@
+// FabricModExample.fm.jvm - Fabric Mod Example
+
+package com.example.fabric;
+
+class FabricModExample implements ModInitializer {
+    fn onInitialize: void {
+        var logger = LoggerFactory.getLogger("fabric-example");
+        logger.info("Fabric Mod loaded!");
+        
+        ClientTickEvents.END_CLIENT_TICK.register(client => {
+            if (client.options.hotbarSavePath.get() == 0) {
+                client.player.sendMessage("Welcome to Fabric!");
+            }
+        });
+    }
+}

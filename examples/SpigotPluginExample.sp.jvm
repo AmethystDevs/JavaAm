@@ -1,0 +1,44 @@
+// SpigotPluginExample.sp.jvm - Spigot Plugin Example
+
+package com.example.spigotplugin;
+
+class SpigotPluginExample extends JavaPlugin {
+    fn onEnable: void {
+        var logger = this.getLogger();
+        logger.info("Spigot Plugin has been enabled!");
+        
+        this.saveDefaultConfig();
+        
+        var cmdExecutor = (sender, cmd, label, args) => {
+            if (cmd.getName().equalsIgnoreCase("hello")) {
+                sender.sendMessage("Hello from Spigot!");
+                return true;
+            }
+            return false;
+        };
+        
+        this.getCommand("hello").setExecutor(cmdExecutor);
+        
+        val pm = this.getServer().getPluginManager();
+        pm.registerEvents(new PlayerListener(this), this);
+    }
+
+    fn onDisable: void {
+        var logger = this.getLogger();
+        logger.info("Spigot Plugin has been disabled!");
+    }
+}
+
+class PlayerListener implements Listener {
+    private var plugin: SpigotPluginExample;
+
+    fn init: void(p: SpigotPluginExample) {
+        this.plugin = p;
+    }
+
+    fn onPlayerJoin: void {
+        var event = event;
+        var player = event.getPlayer();
+        player.sendMessage("Welcome to the server!");
+    }
+}

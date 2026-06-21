@@ -1,0 +1,22 @@
+﻿package com.example;
+
+class TestMod
+    new block TestBlock "test_block"
+        |type-
+            stone
+        -|
+        |properties-
+            "hardness": 1.5
+            "sound": "stone"
+        -|
+        |function-
+            |new.customFunction-
+                "onUse": doSomething
+            -|
+        -|
+    return block;
+
+    register block in group BUILDING
+        |TestBlock
+    return regblock
+return class;

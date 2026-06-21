@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaAm Setup Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="img/javaam-logo.png" alt="JavaAm Logo" class="logo">
+            <div>
+                <h1>JavaAm Setup Guide</h1>
+                <p>Install JavaAm, build the compiler, and configure the VS Code extension.</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project_overview.html">Project</a>
+            <a href="language.html">Language</a>
+            <a href="cheatsheet.html">Cheatsheet</a>
+            <a href="setup.html" class="active">Setup</a>
+            <a href="contributing.html">Contribute</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section>
+            <h2>Prerequisites</h2>
+            <ul>
+                <li>Java Development Kit (JDK) 11 or higher</li>
+                <li>Maven 3.6 or higher</li>
+                <li>Git (optional)</li>
+                <li>Visual Studio Code (optional)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Install Java</h3>
+            <p>Verify Java installation using:</p>
+            <pre><code>java -version
+javac -version</code></pre>
+        </section>
+
+        <section>
+            <h3>Install Maven</h3>
+            <p>Verify Maven installation using:</p>
+            <pre><code>mvn -version</code></pre>
+        </section>
+
+        <section>
+            <h3>Build the JavaAm Compiler</h3>
+            <pre><code>cd ..
+# Windows
+build.bat
+
+# macOS / Linux
+chmod +x build.sh
+./build.sh
+
+# Manual build
+cd compiler
+mvn clean package</code></pre>
+            <p>The compiler output is stored in:</p>
+            <pre><code>compiler/target/javaam-compiler-1.0.0.jar</code></pre>
+        </section>
+
+        <section>
+            <h3>Verify Your Installation</h3>
+            <pre><code>java -jar compiler/target/javaam-compiler-1.0.0.jar help</code></pre>
+        </section>
+
+        <section>
+            <h3>Set Up VS Code Extension</h3>
+            <p>Copy the `javaam-vscode` folder to your VS Code extensions directory and reload the editor.</p>
+            <ul>
+                <li>Windows: <code>%APPDATA%\Code\User\extensions</code></li>
+                <li>macOS: <code>~/.config/Code/User/extensions</code></li>
+                <li>Linux: <code>~/.config/Code/User/extensions</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Compile an Example</h3>
+            <pre><code>java -jar compiler/target/javaam-compiler-1.0.0.jar compile examples/HelloWorld.jvm</code></pre>
+        </section>
+
+        <section>
+            <h3>Troubleshooting</h3>
+            <ul>
+                <li>If <code>java</code> is not found, install JDK and add it to PATH.</li>
+                <li>If <code>mvn</code> is not found, install Maven and add it to PATH.</li>
+                <li>Restart your terminal after updating environment variables.</li>
+                <li>Confirm you are using JDK 11+ and not just a JRE.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Use this guide to install JavaAm quickly and reliably.</p>
+    </footer>
+</body>
+</html>

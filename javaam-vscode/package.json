@@ -1,0 +1,112 @@
+{
+  "name": "javaam-vscode",
+  "displayName": "JavaAm Language & Mod Dev",
+  "description": "Syntax highlighting, compiler integration, and Minecraft mod/plugin development tools for JavaAm.",
+  "version": "1.0.0",
+  "publisher": "amethystdevs",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "main": "./src/extension.js",
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:javaam.compile",
+    "onCommand:javaam.launchDev",
+    "onCommand:javaam.createTemplateProject",
+    "onLanguage:javaam"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "javaam.compile",
+        "title": "JavaAm: Compile Current File",
+        "category": "JavaAm"
+      },
+      {
+        "command": "javaam.launchDev",
+        "title": "JavaAm: Launch JVM mcmp dev",
+        "category": "JavaAm"
+      },
+      {
+        "command": "javaam.createTemplateProject",
+        "title": "JavaAm: Create Minecraft Mod/Plugin Project",
+        "category": "JavaAm"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "javaam.compile",
+          "when": "editorLangId == javaam"
+        },
+        {
+          "command": "javaam.launchDev"
+        },
+        {
+          "command": "javaam.createTemplateProject"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "javaam",
+        "aliases": [
+          "JavaAm",
+          "javaam"
+        ],
+        "extensions": [
+          ".jvm",
+          ".fm.jvm",
+          ".nfm.jvm",
+          ".fom.jvm",
+          ".pp.jvm",
+          ".sp.jvm",
+          ".pu.jvm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "javaam",
+        "scopeName": "source.javaam",
+        "path": "./syntaxes/javaam.tmLanguage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amethystdevs/javaam"
+  },
+  "bugs": {
+    "url": "https://github.com/amethystdevs/javaam/issues"
+  },
+  "homepage": "https://github.com/amethystdevs/javaam#readme",
+  "keywords": [
+    "minecraft",
+    "mod",
+    "plugin",
+    "dsl",
+    "domain-specific-language",
+    "java",
+    "fabric",
+    "forge",
+    "paper",
+    "spigot"
+  ],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#2C2C2C",
+    "theme": "dark"
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "publish-major": "vsce publish major",
+    "publish-minor": "vsce publish minor",
+    "publish-patch": "vsce publish patch"
+  }
+}

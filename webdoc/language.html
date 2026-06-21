@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaAm Language Reference</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="img/javaam-logo.png" alt="JavaAm Logo" class="logo">
+            <div>
+                <h1>JavaAm Language Reference</h1>
+                <p>The core language guide for JavaAm syntax, types, and examples.</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project_overview.html">Project</a>
+            <a href="language.html" class="active">Language</a>
+            <a href="cheatsheet.html">Cheatsheet</a>
+            <a href="setup.html">Setup</a>
+            <a href="contributing.html">Contribute</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section>
+            <h2>JavaAm Programming Language</h2>
+            <p>JavaAm is a simplified Java programming language that compiles directly to Java. It reduces boilerplate and makes Java code more readable while maintaining full Java compatibility.</p>
+        </section>
+
+        <section>
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Simplified Syntax</strong>: Cleaner, more readable code compared to Java</li>
+                <li><strong>Type Inference</strong>: Automatic type detection when not explicitly specified</li>
+                <li><strong>Shorter Method Syntax</strong>: Use <code>fn</code> instead of return types upfront</li>
+                <li><strong>Modern Features</strong>: Lambda expressions, enhanced for-each loops</li>
+                <li><strong>Minecraft Support</strong>: Built-in support for Fabric, NeoForge, Forge, Paper, Spigot, and Purpur</li>
+                <li><strong>Full Java Interoperability</strong>: Compiles to valid Java code</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>File Extensions</h3>
+            <table>
+                <thead>
+                    <tr><th>Extension</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>.jvm</code></td><td>Base JavaAm file</td></tr>
+                    <tr><td><code>.fm.jvm</code></td><td>Fabric Mod</td></tr>
+                    <tr><td><code>.nfm.jvm</code></td><td>NeoForge Mod</td></tr>
+                    <tr><td><code>.fom.jvm</code></td><td>Forge Mod</td></tr>
+                    <tr><td><code>.pp.jvm</code></td><td>Paper Plugin</td></tr>
+                    <tr><td><code>.sp.jvm</code></td><td>Spigot Plugin</td></tr>
+                    <tr><td><code>.pu.jvm</code></td><td>Purpur Plugin</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Hello World</h3>
+            <pre><code>package com.example;
+
+class HelloWorld {
+    fn main: void {
+        var message = "Hello, JavaAm!";
+        System.out.println(message);
+    }
+}
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Variables and Types</h3>
+            <pre><code>// Type inference
+var name = "Alice";
+
+// Explicit typing
+var age: int = 25;
+
+// Immutable variable
+val pi: double = 3.14159;
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Methods</h3>
+            <pre><code>class Calculator {
+    // Method with return type
+    fn add: int(a: int, b: int) {
+        return a + b;
+    }
+
+    // Void method
+    fn greet: void(name: String) {
+        System.out.println("Hello, " + name);
+    }
+
+    // Access modifiers
+    public fn multiply: int(a: int, b: int) {
+        return a * b;
+    }
+
+    private fn helper: void {
+        System.out.println("Helper method");
+    }
+}
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Control Flow</h3>
+            <pre><code>// If statement
+if (age > 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Minor");
+}
+
+// While loop
+var i: int = 0;
+while (i < 10) {
+    System.out.println(i);
+    i = i + 1;
+}
+
+// For-each loop
+for (item: list) {
+    System.out.println(item);
+}
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Classes</h3>
+            <pre><code>class Animal {
+    fn speak: void {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    fn speak: void {
+        System.out.println("Woof!");
+    }
+}
+
+class Main {
+    fn main: void {
+        var dog = new Dog();
+        dog.speak();
+    }
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>JavaAm language documentation.</p>
+    </footer>
+</body>
+</html>

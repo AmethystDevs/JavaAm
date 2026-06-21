@@ -1,0 +1,28 @@
+// PaperPluginExample.pp.jvm - Paper Plugin Example
+
+package com.example.paper;
+
+class PaperPluginExample extends JavaPlugin {
+    fn onEnable: void {
+        var logger = this.getLogger();
+        logger.info("Paper Plugin has been enabled!");
+        
+        this.getCommand("hello").setExecutor((sender, cmd, label, args) => {
+            sender.sendMessage("Hello from Paper!");
+            return true;
+        });
+    }
+
+    fn onDisable: void {
+        var logger = this.getLogger();
+        logger.info("Paper Plugin has been disabled!");
+    }
+}
+
+class CommandListener implements Listener {
+    fn onPlayerChat: void {
+        var event = event;
+        var player = event.getPlayer();
+        player.sendMessage("You said: " + event.getMessage());
+    }
+}

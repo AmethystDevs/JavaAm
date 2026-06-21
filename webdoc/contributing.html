@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributing to JavaAm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="img/javaam-logo.png" alt="JavaAm Logo" class="logo">
+            <div>
+                <h1>Contributing to JavaAm</h1>
+                <p>Guidelines for bug reports, feature requests, code changes, and community contributions.</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project_overview.html">Project</a>
+            <a href="language.html">Language</a>
+            <a href="cheatsheet.html">Cheatsheet</a>
+            <a href="setup.html">Setup</a>
+            <a href="contributing.html" class="active">Contribute</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section>
+            <h2>JavascriptAm Contribution Guide</h2>
+            <p>Thanks for helping improve JavaAm! Follow these steps to contribute safely and effectively.</p>
+        </section>
+
+        <section>
+            <h3>Reporting Bugs</h3>
+            <ol>
+                <li>Search existing issues before reporting.</li>
+                <li>Describe the problem clearly.</li>
+                <li>Include exact reproduction steps.</li>
+                <li>Share environment details: OS, Java version, Maven version.</li>
+                <li>Attach error logs or screenshots if available.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Suggesting Features</h3>
+            <p>When requesting new functionality, explain the use case and expected behavior.</p>
+            <pre><code>## Feature Description
+[Describe the new feature]
+
+## Use Case
+[Explain why it matters]
+
+## Example Usage
+```javaam
+// Example code
+```
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Submitting Code</h3>
+            <ol>
+                <li>Fork the repository and clone it locally.</li>
+                <li>Create a focused branch: <code>git checkout -b feature/my-feature</code></li>
+                <li>Make your changes and keep commits small.</li>
+                <li>Build and test the compiler locally.</li>
+                <li>Push your branch and open a pull request.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Code Style</h3>
+            <ul>
+                <li>Use 4 spaces for indentation.</li>
+                <li>Follow camelCase for methods and variables.</li>
+                <li>Use PascalCase for class names.</li>
+                <li>Write clear comments and JavaDoc for public APIs.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Testing</h3>
+            <pre><code>cd compiler
+mvn clean test
+mvn test -Dtest=LexerTest</code></pre>
+            <p>Test new language features and verify generated code compiles with <code>javac</code>.</p>
+        </section>
+
+        <section>
+            <h3>Pull Request Checklist</h3>
+            <ul>
+                <li>Code follows project style guidelines</li>
+                <li>No new compiler warnings</li>
+                <li>Documentation updated</li>
+                <li>Tests pass locally</li>
+                <li>Commit messages are clear</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Getting Help</h3>
+            <p>If you need assistance, open an issue or discussion on GitHub.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Thank you for contributing to JavaAm!</p>
+    </footer>
+</body>
+</html>

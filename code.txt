@@ -1,0 +1,85 @@
+Minecraft Block file Example:
+
+package your.package;
+
+class <classname>
+    new block <BLOCKNAME> "<blockname>"
+        |type-
+            <blocktype>
+        -|
+        |properties-
+            "": ""
+        -|
+        |function-
+            |new.<CUSTOM_FUNCTION>-
+                "<function>": <action>
+            -|
+        -|
+    return block;
+
+    register block in group <ITEMGROUP>
+        |<BLOCKNAME>
+    return regblock
+return class;
+
+=============================
+Minecraft Item file Example:
+
+package your.package;
+
+class <classname>
+    new item <ITEMNAME> "<itemname>"
+        |type-
+            <itemtype>
+        -|
+        |properties-
+            "": ""
+        -|
+        |function-
+            |new.<CUSTOM_FUNCTION>-
+                "<function>": <action>
+            -|
+        -|
+    return item;
+
+    register item in group <ITEMGROUP>
+        |<ITEMNAME>
+    return regitem
+return class;
+=============================
+Minecraft Mod File Example (the file needed for the mod id and logger) (.mcm.jvm):
+
+package your.package;
+
+class <classname>
+    modReg.<modloader> //when multipple then modReg.<modloader1>-<modloader2>
+        MOD_ID = "<modid>"
+        LOGGER = MOD_ID + LOGGER.log
+
+        |regLog-
+            ""
+        -|
+    return mod;
+return class;
+=============================
+Normal .jvm file Example:
+
+package your.package;
+
+class <classname>
+    math
+        |var-
+            x = 4
+        -|
+        |solve-
+            x + 2 //sol1
+            x + 3 //sol2
+            sol1 + sol2 //sol3
+        -|
+        |print-
+            sol3
+        -|
+    return math;
+
+    print "that was math"
+return class;

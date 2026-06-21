@@ -1,0 +1,10 @@
+// HelloWorld.jvm - Basic JavaAm Example
+
+package com.example;
+
+class HelloWorld {
+    fn main: void {
+        var message: String = "Hello, JavaAm!";
+        System.out.println(message);
+    }
+}

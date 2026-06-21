@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaAm Project Overview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="img/javaam-logo.png" alt="JavaAm Logo" class="logo">
+            <div>
+                <h1>JavaAm Project Overview</h1>
+                <p>Architecture, components, examples, and build details for JavaAm.</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project_overview.html" class="active">Project</a>
+            <a href="language.html">Language</a>
+            <a href="cheatsheet.html">Cheatsheet</a>
+            <a href="setup.html">Setup</a>
+            <a href="contributing.html">Contribute</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section>
+            <h2>Welcome to JavaAm!</h2>
+            <p>JavaAm is a simplified Java programming language designed to reduce boilerplate while preserving full compatibility with Java and its ecosystem.</p>
+        </section>
+
+        <section>
+            <h3>Project Structure</h3>
+            <pre><code>JavaAm/
+├── compiler/                           # JavaAm Compiler (Maven project)
+│   ├── src/main/java/com/javaam/
+│   │   ├── Token.java                 # Token definitions and constants
+│   │   ├── Lexer.java                 # Lexical analysis (source → tokens)
+│   │   ├── Parser.java                # Syntax analysis (tokens → AST)
+│   │   ├── ASTNode.java               # Abstract syntax tree node definitions
+│   │   ├── CodeGenerator.java         # Code generation (AST → Java)
+│   │   ├── JvmMcmpDev.java            # Development utilities
+│   │   └── Main.java                  # CLI interface
+│   ├── pom.xml                        # Maven configuration (Java 11+)
+│   ├── target/                        # Built artifacts and compiled classes
+├── javaam-vscode/                      # VS Code Language Extension
+│   ├── package.json                   # Extension metadata and configuration
+│   ├── language-configuration.json    # Language configuration (comments, brackets)
+│   ├── src/extension.js               # Extension entry point
+│   └── syntaxes/javaam.tmLanguage.json # TextMate grammar for syntax highlighting
+├── examples/                           # Example Programs
+└── docs/                               # Documentation
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Key Components</h3>
+            <h4>Compiler</h4>
+            <p>The compiler transforms JavaAm source files into valid Java code.</p>
+            <ul>
+                <li><strong>Token.java</strong> - Token type definitions</li>
+                <li><strong>Lexer.java</strong> - Lexical analysis</li>
+                <li><strong>Parser.java</strong> - Syntax analysis</li>
+                <li><strong>ASTNode.java</strong> - AST node definitions</li>
+                <li><strong>CodeGenerator.java</strong> - Java code generation</li>
+                <li><strong>Main.java</strong> - CLI interface</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>VS Code Extension</h4>
+            <p>This extension adds language support for `.jvm` files in Visual Studio Code.</p>
+            <ul>
+                <li>Syntax highlighting</li>
+                <li>Language configuration</li>
+                <li>Auto-detection of JavaAm files</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Examples</h4>
+            <table>
+                <thead>
+                    <tr><th>File</th><th>Type</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>HelloWorld.jvm</td><td>Base</td><td>Simple Hello World example</td></tr>
+                    <tr><td>FabricModExample.fm.jvm</td><td>Fabric Mod</td><td>Fabric mod example</td></tr>
+                    <tr><td>NeoForgeModExample.nfm.jvm</td><td>NeoForge Mod</td><td>NeoForge mod example</td></tr>
+                    <tr><td>ForgeModExample.fom.jvm</td><td>Forge Mod</td><td>Forge mod example</td></tr>
+                    <tr><td>PaperPluginExample.pp.jvm</td><td>Paper Plugin</td><td>Paper server plugin example</td></tr>
+                    <tr><td>SpigotPluginExample.sp.jvm</td><td>Spigot Plugin</td><td>Spigot server plugin example</td></tr>
+                    <tr><td>PurpurPluginExample.pu.jvm</td><td>Purpur Plugin</td><td>Purpur server plugin example</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Build & Run</h3>
+            <pre><code>cd compiler
+mvn clean package
+java -jar target/javaam-compiler-1.0.0.jar compile file.jvm</code></pre>
+        </section>
+
+        <section>
+            <h3>File Extensions</h3>
+            <table>
+                <thead>
+                    <tr><th>Extension</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>.jvm</code></td><td>General JavaAm code</td></tr>
+                    <tr><td><code>.fm.jvm</code></td><td>Fabric mod source</td></tr>
+                    <tr><td><code>.nfm.jvm</code></td><td>NeoForge mod source</td></tr>
+                    <tr><td><code>.fom.jvm</code></td><td>Forge mod source</td></tr>
+                    <tr><td><code>.pp.jvm</code></td><td>Paper plugin source</td></tr>
+                    <tr><td><code>.sp.jvm</code></td><td>Spigot plugin source</td></tr>
+                    <tr><td><code>.pu.jvm</code></td><td>Purpur plugin source</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Project documentation for JavaAm.</p>
+    </footer>
+</body>
+</html>

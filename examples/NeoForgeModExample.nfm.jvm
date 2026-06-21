@@ -1,0 +1,22 @@
+// NeoForgeModExample.nfm.jvm - NeoForge Mod Example
+
+package com.example.neoforgemod;
+
+public class NeoForgeModExample {
+    public static final String MOD_ID = "neoforgeexample";
+
+    fn onServerStarting: void {
+        var logger = LogManager.getLogger();
+        logger.info("NeoForge Mod loaded!");
+    }
+
+    fn registerBlocks: void {
+        var blockRegistry = new BlockRegistry();
+        blockRegistry.register("custom_block");
+    }
+
+    fn registerItems: void {
+        var itemRegistry = new ItemRegistry();
+        itemRegistry.register("custom_item");
+    }
+}

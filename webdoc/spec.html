@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaAm Language Specification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="img/javaam-logo.png" alt="JavaAm Logo" class="logo">
+            <div>
+                <h1>JavaAm Language Specification</h1>
+                <p>The formal syntax and semantics guide for JavaAm.</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project_overview.html">Project</a>
+            <a href="language.html">Language</a>
+            <a href="spec.html" class="active">Specification</a>
+            <a href="cheatsheet.html">Cheatsheet</a>
+            <a href="setup.html">Setup</a>
+            <a href="contributing.html">Contribute</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section>
+            <h2>1. Lexical Elements</h2>
+            <h3>1.1 Keywords</h3>
+            <p>JavaAm keywords include:</p>
+            <ul>
+                <li><strong>Control flow:</strong> <code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>return</code>, <code>break</code>, <code>continue</code></li>
+                <li><strong>Declarations:</strong> <code>class</code>, <code>fn</code>, <code>var</code>, <code>val</code>, <code>interface</code>, <code>enum</code>, <code>package</code>, <code>import</code></li>
+                <li><strong>Inheritance:</strong> <code>extends</code>, <code>implements</code></li>
+                <li><strong>Modifiers:</strong> <code>public</code>, <code>private</code>, <code>protected</code>, <code>static</code>, <code>final</code>, <code>abstract</code></li>
+                <li><strong>Types:</strong> <code>void</code>, <code>int</code>, <code>long</code>, <code>double</code>, <code>float</code>, <code>boolean</code>, <code>String</code>, <code>char</code></li>
+                <li><strong>Literals:</strong> <code>true</code>, <code>false</code>, <code>null</code>, <code>new</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>1.2 Identifiers</h3>
+            <p>Identifiers follow Java naming rules:</p>
+            <ul>
+                <li>Start with a letter, underscore, or dollar sign</li>
+                <li>Followed by letters, digits, underscores, or dollar signs</li>
+                <li>Case-sensitive</li>
+                <li>Cannot match reserved keywords</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>1.3 Comments</h3>
+            <pre><code>// Line comment
+
+/*
+  Block comment
+*/</code></pre>
+        </section>
+
+        <section>
+            <h3>1.4 Literals</h3>
+            <p>String and numeric literals are supported.</p>
+            <pre><code>var message = "Hello, World!";
+var escaped = "Line 1\nLine 2";
+var integer = 42;
+var decimal = 3.14;
+var scientific = 1.5e10;</code></pre>
+        </section>
+
+        <section>
+            <h2>2. Types</h2>
+            <h3>2.1 Primitive Types</h3>
+            <table>
+                <thead>
+                    <tr><th>Type</th><th>Range</th><th>Default</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>int</code></td><td>-2³¹ to 2³¹-1</td><td>0</td></tr>
+                    <tr><td><code>long</code></td><td>-2⁶³ to 2⁶³-1</td><td>0</td></tr>
+                    <tr><td><code>float</code></td><td>IEEE 754</td><td>0.0</td></tr>
+                    <tr><td><code>double</code></td><td>IEEE 754</td><td>0.0</td></tr>
+                    <tr><td><code>boolean</code></td><td>true / false</td><td>false</td></tr>
+                    <tr><td><code>char</code></td><td>Unicode</td><td>'\u0000'</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>2.2 Reference Types</h3>
+            <ul>
+                <li>Classes</li>
+                <li>Interfaces</li>
+                <li>Arrays</li>
+                <li>Enums</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>2.3 Type Inference</h3>
+            <pre><code>var name = "Alice";
+var age = 25;
+var score: double = 95.5;</code></pre>
+        </section>
+
+        <section>
+            <h2>3. Variables and Constants</h2>
+            <h3>3.1 Variable Declaration</h3>
+            <pre><code>var identifier: type = initializer;
+var identifier = initializer;</code></pre>
+
+            <h3>3.2 Immutable Variables</h3>
+            <pre><code>val PI: double = 3.14159;
+val gravity: double = 9.8;</code></pre>
+        </section>
+
+        <section>
+            <h2>4. Methods</h2>
+            <h3>4.1 Declaration</h3>
+            <pre><code>[modifiers] fn methodName: returnType(parameters) {
+    // method body
+}</code></pre>
+
+            <h3>4.2 Examples</h3>
+            <pre><code>fn greet: void {
+    System.out.println("Hello!");
+}
+
+fn add: int(a: int, b: int) {
+    return a + b;
+}
+
+public fn getName: String {
+    return "JavaAm";
+}
+
+private fn helper: void {
+    System.out.println("Helper");
+}
+
+static fn staticMethod: void {
+    System.out.println("Static");
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>5. Classes</h2>
+            <h3>5.1 Declaration</h3>
+            <pre><code>[modifiers] class ClassName [extends SuperClass] [implements Interface1, Interface2] {
+    // class members
+}</code></pre>
+
+            <h3>5.2 Examples</h3>
+            <pre><code>public class Animal {
+    fn speak: void {
+        System.out.println("...");
+    }
+}
+
+class Dog extends Animal {
+    fn speak: void {
+        System.out.println("Woof!");
+    }
+}
+
+class Circle implements Drawable {
+    fn draw: void {
+        System.out.println("Circle");
+    }
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>6. Interfaces</h2>
+            <h3>6.1 Declaration</h3>
+            <pre><code>[modifiers] interface InterfaceName [extends SuperInterface] {
+    // method signatures
+}</code></pre>
+
+            <h3>6.2 Example</h3>
+            <pre><code>interface Drawable {
+    fn draw: void;
+    fn getArea: double;
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>7. Control Structures</h2>
+            <h3>7.1 If-Else</h3>
+            <pre><code>if (condition) {
+    // statements
+} else if (otherCondition) {
+    // statements
+} else {
+    // statements
+}</code></pre>
+
+            <h3>7.2 While Loop</h3>
+            <pre><code>while (condition) {
+    // statements
+}</code></pre>
+
+            <h3>7.3 For-Each Loop</h3>
+            <pre><code>for (variable: iterable) {
+    // statements
+}</code></pre>
+
+            <h3>7.4 Return Statement</h3>
+            <pre><code>return value;
+return;</code></pre>
+        </section>
+
+        <section>
+            <h2>8. Expressions</h2>
+            <h3>8.1 Operators</h3>
+            <p><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></p>
+            <p><strong>Comparison:</strong> <code><</code>, <code>></code>, <code><=</code>, <code>>=</code>, <code>==</code>, <code>!=</code></p>
+            <p><strong>Logical:</strong> <code>&&</code>, <code>||</code>, <code>!</code></p>
+            <p><strong>Assignment:</strong> <code>=</code>, <code>+=</code>, <code>-=</code></p>
+        </section>
+
+        <section>
+            <h3>8.2 Method Calls</h3>
+            <pre><code>object.method();
+object.method(arg1, arg2);
+ClassName.staticMethod();</code></pre>
+
+            <h3>8.3 Object Creation</h3>
+            <pre><code>var obj = new ClassName();
+var obj = new ClassName(arg1, arg2);</code></pre>
+
+            <h3>8.4 Array Access</h3>
+            <pre><code>var element = array[index];
+array[index] = value;</code></pre>
+        </section>
+
+        <section>
+            <h2>9. Packages and Imports</h2>
+            <h3>9.1 Package Declaration</h3>
+            <pre><code>package com.example.myapp;</code></pre>
+
+            <h3>9.2 Import Statement</h3>
+            <pre><code>import java.util.List;
+import java.util.*;</code></pre>
+        </section>
+
+        <section>
+            <h2>10. Minecraft-Specific Features</h2>
+            <p>JavaAm supports platform-specific source extensions for Minecraft modding.</p>
+            <ul>
+                <li><strong>Fabric Mods</strong> (<code>.fm.jvm</code>)</li>
+                <li><strong>NeoForge Mods</strong> (<code>.nfm.jvm</code>)</li>
+                <li><strong>Forge Mods</strong> (<code>.fom.jvm</code>)</li>
+                <li><strong>Paper Plugins</strong> (<code>.pp.jvm</code>)</li>
+                <li><strong>Spigot Plugins</strong> (<code>.sp.jvm</code>)</li>
+                <li><strong>Purpur Plugins</strong> (<code>.pu.jvm</code>)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>11. Compiler Directives</h2>
+            <pre><code>java -jar compiler/target/javaam-compiler-1.0.0.jar compile filename.jvm</code></pre>
+        </section>
+
+        <section>
+            <h2>12. Error Handling</h2>
+            <ul>
+                <li><strong>Lexical Errors:</strong> unexpected characters, malformed strings, invalid number formats</li>
+                <li><strong>Syntax Errors:</strong> missing semicolons, unmatched braces, invalid method signatures</li>
+                <li><strong>Semantic Errors:</strong> undefined variables, type mismatches, invalid method calls</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>13. Best Practices</h2>
+            <ol>
+                <li>Use descriptive names for variables and methods</li>
+                <li>Prefer <code>val</code> for constants</li>
+                <li>Use type inference when types are obvious</li>
+                <li>Keep methods small and focused</li>
+                <li>Use comments for complex logic</li>
+                <li>Follow camelCase for variables and PascalCase for classes</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>14. Example Programs</h2>
+            <h3>14.1 Calculator</h3>
+            <pre><code>class Calculator {
+    fn add: int(a: int, b: int) {
+        return a + b;
+    }
+
+    fn subtract: int(a: int, b: int) {
+        return a - b;
+    }
+
+    fn main: void {
+        var result = new Calculator().add(5, 3);
+        System.out.println(result);
+    }
+}
+</code></pre>
+            <h3>14.2 List Processing</h3>
+            <pre><code>class ListProcessor {
+    fn printList: void(items: List) {
+        for (item: items) {
+            System.out.println(item);
+        }
+    }
+
+    fn main: void {
+        var list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        new ListProcessor().printList(list);
+    }
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Formal JavaAm language specification.</p>
+    </footer>
+</body>
+</html>

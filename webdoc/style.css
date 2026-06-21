@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    color: #e2e8f0;
+    background-image: linear-gradient(rgba(5, 15, 35, 0.92), rgba(8, 18, 42, 0.92)), url("img/javaam-doc-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+a {
+    color: #7dd3fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 3rem;
+    background: rgba(10, 20, 40, 0.92);
+    color: #f8fafc;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.brand {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.logo {
+    width: 72px;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.brand p {
+    margin: 0.25rem 0 0;
+    color: #cbd5e1;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main-nav a {
+    color: #cbd5e1;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.page-content {
+    padding: 2.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.hero h2 {
+    margin-top: 0;
+    font-size: 2.6rem;
+    color: #f8fafc;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: 1rem 0 1.75rem;
+    color: #cbd5e1;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.5rem;
+    border-radius: 0.85rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(25,103,210,0.18);
+}
+
+.primary {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.card {
+    background: rgba(10, 20, 40, 0.88);
+    border-radius: 20px;
+    padding: 1.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #f8fafc;
+}
+
+.card p {
+    margin: 1rem 0 1.35rem;
+    color: #cbd5e1;
+}
+
+.card a {
+    font-weight: 600;
+    color: #7dd3fc;
+}
+
+.highlight-section {
+    background: rgba(15, 23, 42, 0.86);
+    padding: 2rem;
+    border-radius: 22px;
+    border: 1px solid rgba(59, 130, 246, 0.18);
+}
+
+.highlight-section h2 {
+    margin-top: 0;
+}
+
+.highlight-section ul {
+    margin: 1rem 0 0;
+    padding-left: 1.4rem;
+}
+
+.highlight-section li {
+    margin: 0.7rem 0;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 2rem 3rem;
+    color: #94a3b8;
+}
+
+.page {
+    padding: 2rem 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+    color: #f8fafc;
+}
+
+.page p,
+.page li {
+    color: #cbd5e1;
+}
+
+.page section {
+    margin-bottom: 2rem;
+}
+
+.page code,
+.page pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.page pre {
+    background: #111827;
+    color: #f8fafc;
+    padding: 1rem;
+    border-radius: 16px;
+    overflow-x: auto;
+}
+
+.page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.page th,
+.page td {
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    padding: 0.9rem 1rem;
+    text-align: left;
+    color: #e2e8f0;
+}
+
+.page thead {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        padding: 1.5rem;
+    }
+
+    .page-content,
+    .page {
+        padding: 1.5rem;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,34 @@
+// ForgeModExample.fom.jvm - Forge Mod Example
+
+package com.example.forgemod;
+
+class ForgeModExample {
+    public static final String MOD_ID = "forgeexample";
+    public static final String MOD_NAME = "Forge Example";
+    public static final String MOD_VERSION = "1.0.0";
+
+    fn preInit: void {
+        var logger = LogManager.getLogger(MOD_ID);
+        logger.info("Forge Mod pre-initializing!");
+    }
+
+    fn init: void {
+        var logger = LogManager.getLogger(MOD_ID);
+        logger.info("Forge Mod initializing!");
+        this.registerBlocks();
+        this.registerItems();
+    }
+
+    fn postInit: void {
+        var logger = LogManager.getLogger(MOD_ID);
+        logger.info("Forge Mod post-initializing!");
+    }
+
+    private fn registerBlocks: void {
+        System.out.println("Registering blocks...");
+    }
+
+    private fn registerItems: void {
+        System.out.println("Registering items...");
+    }
+}

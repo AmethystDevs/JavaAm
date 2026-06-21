@@ -1,0 +1,59 @@
+// PurpurPluginExample.pu.jvm - Purpur Plugin Example
+
+package com.example.purpurplugin;
+
+class PurpurPluginExample extends JavaPlugin {
+    fn onEnable: void {
+        var logger = this.getLogger();
+        logger.info("Purpur Plugin has been enabled!");
+        
+        this.saveDefaultConfig();
+        
+        // Register commands
+        this.getCommand("purpurtest").setExecutor((sender, cmd, label, args) => {
+            sender.sendMessage("Hello from Purpur!");
+            return true;
+        });
+        
+        // Register event listeners
+        val pm = this.getServer().getPluginManager();
+        pm.registerEvents(new PurpurPlayerListener(this), this);
+        
+        logger.info("All features initialized!");
+    }
+
+    fn onDisable: void {
+        var logger = this.getLogger();
+        logger.info("Purpur Plugin has been disabled!");
+    }
+
+    fn reloadSettings: void {
+        this.reloadConfig();
+        var logger = this.getLogger();
+        logger.info("Config reloaded!");
+    }
+}
+
+class PurpurPlayerListener implements Listener {
+    private var plugin: PurpurPluginExample;
+
+    fn init: void(p: PurpurPluginExample) {
+        this.plugin = p;
+    }
+
+    fn onPlayerJoin: void {
+        var event = event;
+        var player = event.getPlayer();
+        var message = this.plugin.getConfig().getString("join-message");
+        if (message != null) {
+            player.sendMessage(message);
+        }
+    }
+
+    fn onPlayerQuit: void {
+        var event = event;
+        var player = event.getPlayer();
+        var logger = this.plugin.getLogger();
+        logger.info(player.getName() + " has left the server!");
+    }
+}

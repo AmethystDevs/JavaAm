@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaAm Cheatsheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="img/javaam-logo.png" alt="JavaAm Logo" class="logo">
+            <div>
+                <h1>JavaAm Cheatsheet</h1>
+                <p>Quick reference for JavaAm syntax, operators, and common language patterns.</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project_overview.html">Project</a>
+            <a href="language.html">Language</a>
+            <a href="cheatsheet.html" class="active">Cheatsheet</a>
+            <a href="setup.html">Setup</a>
+            <a href="contributing.html">Contribute</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section>
+            <h2>Quick Syntax Reference</h2>
+            <p>JavaAm provides a simple syntax layer on top of Java with cleaner declarations and concise control flow.</p>
+        </section>
+
+        <section>
+            <h3>Variables</h3>
+            <pre><code>var name = "Alice";
+var age = 25;
+var score: double = 95.5;
+val MAX_SIZE: int = 100;</code></pre>
+        </section>
+
+        <section>
+            <h3>Methods</h3>
+            <pre><code>fn greet: void(name: String) {
+    System.out.println("Hello, " + name);
+}
+
+fn add: int(a: int, b: int) {
+    return a + b;
+}
+
+public fn multiply: int(a: int, b: int) {
+    return a * b;
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Classes</h3>
+            <pre><code>class Animal {
+    fn speak: void {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    fn speak: void {
+        System.out.println("Woof!");
+    }
+}
+
+class Impl implements Runnable {
+    fn run: void {
+        System.out.println("Running...");
+    }
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Control Flow</h3>
+            <pre><code>if (x > 10) {
+    System.out.println("Greater");
+} else {
+    System.out.println("Smaller or equal");
+}
+
+for (var i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+
+while (count < 5) {
+    count = count + 1;
+}
+
+for (item: list) {
+    System.out.println(item);
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Data Types</h3>
+            <table>
+                <thead>
+                    <tr><th>Type</th><th>Example</th><th>Size</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>int</td><td>42</td><td>32-bit</td></tr>
+                    <tr><td>long</td><td>1000000L</td><td>64-bit</td></tr>
+                    <tr><td>double</td><td>3.14</td><td>64-bit</td></tr>
+                    <tr><td>float</td><td>3.14f</td><td>32-bit</td></tr>
+                    <tr><td>boolean</td><td>true</td><td>1-bit</td></tr>
+                    <tr><td>String</td><td>"Hello"</td><td>Variable</td></tr>
+                    <tr><td>char</td><td>'A'</td><td>16-bit Unicode</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Operators</h3>
+            <pre><code>a + b    // addition
+a - b    // subtraction
+a * b    // multiplication
+a / b    // division
+a % b    // modulo
+
+x += 5   // add and assign
+x -= 5   // subtract and assign
+x *= 2   // multiply and assign</code></pre>
+        </section>
+
+        <section>
+            <h3>Examples</h3>
+            <pre><code>var list = new ArrayList();
+list.add("item1");
+list.add("item2");
+
+var numbers: int[] = new int[5];
+var words: String[] = {"a", "b", "c"};</code></pre>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Cheatsheet for quick JavaAm reference.</p>
+    </footer>
+</body>
+</html>
